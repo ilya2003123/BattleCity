@@ -1,5 +1,9 @@
 $(SolutionDir)external\SFML-2.5.1\x86\include
 
+$(SolutionDir)bin\$(Platform)\$(Configuration)\
+build\$(Platform)\$(Configuration)\
+$(SolutionDir)bin\$(Platform)\$(Configuration)\$(TargetFileName)
+
 copy /Y "$(SolutionDir)external\SFML-2.5.1\x86\bin" "$(TargetDir)"
 
 $(SolutionDir)
