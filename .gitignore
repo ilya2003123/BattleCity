@@ -1,16 +1,5 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
 
-#Files
-*.vcxproj.filters
-*.vcxproj.user
-*.sln
 
-# Folder
-# --------
-/.vs/
-/Debug/
-/Release/
-/build/
-/bin/
-/x64/
+

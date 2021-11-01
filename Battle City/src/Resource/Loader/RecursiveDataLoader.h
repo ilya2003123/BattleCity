@@ -1,5 +1,6 @@
 #pragma once
 
+#pragma warning(push, 0)        
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <unordered_map>
@@ -10,8 +11,9 @@
 #include <functional>
 #include <algorithm>
 #include <regex>
+#pragma warning(pop)
 
-template<typename T> 
+template<typename T>
 class RecursiveDataLoader
 {
 public:
@@ -27,16 +29,17 @@ public:
 	/// </summary>
 	/// <param name="formats">".png.jpg.bmp"</param>
 	/// <param name="delim">"[.]" because regex</param>
-	void setSupportedFormats(const std::string& formats,const std::string& delim);
+	void setSupportedFormats(const std::string& formats, const std::string& delim);
 	/// <summary>
 	/// load assets with users functor
 	/// </summary>
 	/// <param name="folderPath">"data"</param>
 	/// <param name="loader">"itetm.loadFromFile(path) u get only path with your formats"</param>
 	void loadAssets(std::string_view folderPath,
-		            std::function<void(T& item, const std::filesystem::path& itemPath)> loader);
+		std::function<void(T& item, const std::filesystem::path& itemPath)> loader);
 
-	T* operator[](std::string_view name);
+	T& operator[](std::string_view name);
+	const T& operator[](std::string_view name) const;
 	T* getPtr(std::string_view name);
 	const T* getPtr(const std::string_view name) const;
 
@@ -48,6 +51,3 @@ private:
 
 
 #include "RecursiveDataLoader.inl" //implementation
-
-
-

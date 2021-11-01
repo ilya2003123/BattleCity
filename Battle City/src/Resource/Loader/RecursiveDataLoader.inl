@@ -1,4 +1,4 @@
-#include "RecursiveDataLoader.hpp"
+#include "RecursiveDataLoader.h"
 
 template<typename T>
 inline void RecursiveDataLoader<T>::setSupportedFormats(
@@ -21,6 +21,9 @@ inline void RecursiveDataLoader<T>::loadAssets(std::string_view folderPath,
         return;
     }
 
+    if (!(std::filesystem::is_directory(folderPath) && std::filesystem::exists(folderPath)))
+        return;
+        
     std::vector<std::filesystem::path> pathFiles;
     for (const auto& p : std::filesystem::recursive_directory_iterator(folderPath)) {
         pathFiles.emplace_back(p.path());
@@ -36,9 +39,15 @@ inline void RecursiveDataLoader<T>::loadAssets(std::string_view folderPath,
 }
 
 template<typename T>
-inline T* RecursiveDataLoader<T>::operator[](std::string_view name)
+inline T& RecursiveDataLoader<T>::operator[](std::string_view name)
 {
-    return getPtr(name);
+    return storage[name.data()];
+}
+
+template<typename T>
+inline const T& RecursiveDataLoader<T>::operator[](std::string_view name) const
+{
+    return storage[name];
 }
 
 template<typename T>
@@ -54,9 +63,3 @@ inline T* RecursiveDataLoader<T>::getPtr(std::string_view name) {
     }
     return nullptr;
 }
-
-
-
-
-
-
