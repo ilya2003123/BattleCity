@@ -31,15 +31,12 @@ public:
 private:
 	sf::RenderWindow m_window;
 	std::string m_title;
+	sf::CircleShape m_shape;
+	RecursiveDataLoader<sf::Texture> m_textureHolder;
+private:
 	int m_width = 0;
 	int m_height = 0;
 	int m_fps = 0;
-	sf::CircleShape m_shape;
-
 	bool m_isOpen = false;
-
-private:
-	RecursiveDataLoader<sf::Texture> m_textureHolder;
-
 };
 
