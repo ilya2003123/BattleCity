@@ -40,4 +40,3 @@ private:
 	bool m_isOpen = false;
 	Tank m_tank;
 };
-

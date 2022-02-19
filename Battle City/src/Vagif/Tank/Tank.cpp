@@ -1,6 +1,5 @@
 #include "Tank.h"
 
-
 //void Tank::setTexture(sf::Texture& newTexture)
 //{
 //	newTexture.loadFromFile("C:\\JavaBook\\txt\\white.png");
@@ -51,23 +50,25 @@ void Tank::tankControl()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
 		this->m_control = 0;
-		this->m_speed = 0.5f;
+		this->m_speed = SPEED;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
 		this->m_control = 1;
-		this->m_speed = 0.5f;
+		this->m_speed = SPEED;
 	}	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 		this->m_control = 2;
-		this->m_speed = 0.5f;
+		this->m_speed = SPEED;
 	}	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
 		this->m_control = 3;
-		this->m_speed = 0.5f;
+		this->m_speed = SPEED;
 	}
 }
 
+
+// -
 int Tank::getControl() {
 	return m_control;
 }

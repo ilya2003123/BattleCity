@@ -7,7 +7,7 @@ Window::Window(const std::string& title, const int width, const int height) noex
 	m_height(height),
 	m_isOpen(true),
 	m_fps(60),
-	m_tank(0, 0, 50, 50)
+	m_tank(0, 0, 16, 16)
 {
 	m_window.setFramerateLimit(m_fps);
 }
