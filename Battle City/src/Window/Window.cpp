@@ -9,15 +9,7 @@ Window::Window(const std::string& title, const int width, const int height) noex
 	m_fps(60)
 {
 	m_window.setFramerateLimit(m_fps);
-
 	m_shape.setFillColor(sf::Color::Green);
-
-	//test
-	m_textureHolder.setSupportedFormats(".png.jpg.bmp", "[|.:,]");
-	m_textureHolder.loadAssets("data", [](auto& item, auto& path) {
-		item.loadFromFile(path.string());
-	});
-
 }
 
 bool Window::isOpen() const
@@ -28,9 +20,9 @@ bool Window::isOpen() const
 void Window::draw()
 {
 	m_window.clear();
-
+	//draw your stuff below
 	m_window.draw(m_shape);
-
+	//
 	m_window.display();
 }
 
