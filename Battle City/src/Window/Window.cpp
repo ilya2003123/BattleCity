@@ -6,11 +6,10 @@ Window::Window(const std::string& title, const int width, const int height) noex
 	m_width(width),
 	m_height(height),
 	m_isOpen(true),
-	m_fps(60)
+	m_fps(60),
+	m_tank(0, 0, 50, 50)
 {
 	m_window.setFramerateLimit(m_fps);
-
-
 }
 
 bool Window::isOpen() const
@@ -20,13 +19,12 @@ bool Window::isOpen() const
 
 void Window::draw()
 {
-	Tank tank;
-	sf::Texture t;
-	tank.setTexture(t);
+	m_tank.tankControl();
+	m_tank.update(/*time*/);
 
 	m_window.clear();
 
-	m_window.draw(tank);
+	m_window.draw(m_tank);
 
 	m_window.display();
 }

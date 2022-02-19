@@ -2,6 +2,7 @@
 
 #include "AbstractWindow.h"
 #include "../Resource/Loader/RecursiveDataLoader.h"
+#include "../Vagif/Tank/Tank.h"
 
 #pragma warning(push, 0)  
 #include <string>
@@ -37,5 +38,6 @@ private:
 	int m_height = 0;
 	int m_fps = 0;
 	bool m_isOpen = false;
+	Tank m_tank;
 };
 
