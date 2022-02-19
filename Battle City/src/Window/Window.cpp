@@ -1,22 +1,15 @@
 #include "Window.h"
+#include "../Vagif/Tank/Tank.h"
 
 Window::Window(const std::string& title, const int width, const int height) noexcept :
 	m_window(sf::VideoMode(width, height), title, sf::Style::Default),
 	m_width(width),
 	m_height(height),
 	m_isOpen(true),
-	m_shape(100.f),
 	m_fps(60)
 {
 	m_window.setFramerateLimit(m_fps);
 
-	m_shape.setFillColor(sf::Color::Green);
-
-	//test
-	m_textureHolder.setSupportedFormats(".png.jpg.bmp", "[|.:,]");
-	m_textureHolder.loadAssets("data", [](auto& item, auto& path) {
-		item.loadFromFile(path.string());
-	});
 
 }
 
@@ -27,9 +20,13 @@ bool Window::isOpen() const
 
 void Window::draw()
 {
+	Tank tank;
+	sf::Texture t;
+	tank.setTexture(t);
+
 	m_window.clear();
 
-	m_window.draw(m_shape);
+	m_window.draw(tank);
 
 	m_window.display();
 }

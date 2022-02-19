@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -185,16 +185,20 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Vagif\ISprite\ISprite.cpp" />
     <ClCompile Include="src\App\App.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Window\Window.cpp" />
+    <ClCompile Include="src\Vagif\Tank\Tank.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Vagif\ISprite\ISprite.h" />
     <ClInclude Include="src\App\App.h" />
     <ClInclude Include="src\App\AbstractApp.h" />
     <ClInclude Include="src\Resource\Loader\RecursiveDataLoader.h" />
     <ClInclude Include="src\Window\AbstractWindow.h" />
     <ClInclude Include="src\Window\Window.h" />
+    <ClInclude Include="src\Vagif\Tank\Tank.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Resource\Loader\RecursiveDataLoader.inl" />

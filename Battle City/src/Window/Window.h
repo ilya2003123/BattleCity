@@ -31,7 +31,6 @@ public:
 private:
 	sf::RenderWindow m_window;
 	std::string m_title;
-	sf::CircleShape m_shape;
 	RecursiveDataLoader<sf::Texture> m_textureHolder;
 private:
 	int m_width = 0;
